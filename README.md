@@ -17,7 +17,6 @@ Question 3:
 Image of growth comparison:
 ![growth_comparison](https://github.com/user-attachments/assets/09a8db1d-b9a9-475c-9ab4-abe96c6f4226)
 
-Question 4:
 
 
 
