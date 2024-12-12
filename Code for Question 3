@@ -1,0 +1,32 @@
+if (!require(ggplot2)) install.packages("ggplot2")
+library(ggplot2)
+
+N0 <- exp(6.889)      # Initial population size
+r <- 0.01002          # Growth rate
+K <- 6.00e+10         # Carrying capacity
+time <- seq(0, 5000, by = 10)  # Time vector
+
+exponential_growth <- function(t) {
+  N0 * exp(r * t)
+}
+
+logistic_fun <- function(t) {
+  
+  N <- (N0*K*exp(r*t))/(K-N0+N0*exp(r*t))
+  
+  return(N)
+  
+}
+
+growth_data <- data.frame(
+  time = time,
+  Exponential = exponential_growth(time),
+  Logistic = logistic_fun(time)
+)
+ggplot() +
+  geom_line(data = growth_data, aes(x = time, y = Exponential, color = "Exponential"), size = 1.2) +
+  geom_line(data = growth_data, aes(x = time, y = Logistic, color = "Logistic"), size = 1.2) +
+  labs(title = "Comparison of Exponential and Logistic Growth",
+       x = "Time", y = "Population") +
+  scale_color_manual(values = c("Exponential" = "coral", "Logistic" = "darkturquoise")) +
+  theme_minimal() + scale_y_log10()
