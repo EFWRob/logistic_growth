@@ -9,10 +9,10 @@ The results from this model were that N0 was exp(6.889) ≈ 981, r was found to 
 Question 2:
 
 The continuous exponential equation goes: f(x) = N0*e^r*t, using this in R we get: 
-N1 <- N0 * exp(r * 4980)
-N1 = 4.602307e+24 
+N1 <- N0 * exp(r * 4980). N1 (population at t=4980) = 4.602307e+24.  
 This is much larger than the logistic growth which reaches equilibrium at 6.00 * 10^10, because it is limited by carrying capacity.
 
 Question 3:
+
 
 
